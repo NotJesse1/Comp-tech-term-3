@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        .content {
+            text-align: center;
+            padding: 2rem;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#about" onclick="showContent('about')">About</a>
+            <a href="#services" onclick="showContent('services')">Services</a>
+            <a href="#contact" onclick="showContent('contact')">Contact</a>
+        </nav>
+    </header>
+    <div class="content">
+        <div id="about" class="hidden">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div id="services" class="hidden">
+            <h2>Our Services</h2>
+            <p>We offer a wide range of services to meet your needs.</p>
+        </div>
+        <div id="contact" class="hidden">
+            <h2>Contact Us</h2>
+            <p>Feel free to reach out to us via email or phone.</p>
+        </div>
+    </div>
+    <script>
+        function showContent(sectionId) {
+            const contentDivs = document.querySelectorAll('.content > div');
+            contentDivs.forEach(div => {
+                div.classList.add('hidden');
+            });
+            const targetDiv = document.getElementById(sectionId);
+            targetDiv.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
